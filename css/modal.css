@@ -12,9 +12,9 @@
 
     background-color: rgba(46, 47, 66, 0.4);
 
-    visibility: visible;
-    opacity: 1;
-    pointer-events: auto;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
 
     transition:
         visibility 250ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -46,8 +46,6 @@
         0px 1px 1px rgba(0, 0, 0, 0.14),
         0px 1px 3px rgba(0, 0, 0, 0.12),
         0px 2px 1px rgba(0, 0, 0, 0.2);
-
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close {
@@ -64,7 +62,7 @@
 
     padding: 0;
 
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(46, 47, 66, 0.4);
     border-radius: 50%;
 
     background-color: #e7e9fc;
@@ -84,6 +82,13 @@
 
 .modal-close-icon {
     fill: #2e2f42;
+
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close:hover .modal-close-icon,
+.modal-close:focus .modal-close-icon {
+    fill: #ffffff;
 }
 
 .modal-title {
@@ -133,11 +138,11 @@
     background-color: transparent;
     outline: transparent;
 
-    font-size: 12px;
-    line-height: 1.17;
+    font-size: 16px;
+    line-height: 1.5;
     letter-spacing: 0.04em;
 
-    color: #2e2f42;
+    color: #434455;
 
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -179,7 +184,7 @@
     line-height: 1.17;
     letter-spacing: 0.04em;
 
-    color: #2e2f42;
+    color: #434455;
 
     resize: none;
 
@@ -295,10 +300,16 @@
 
     cursor: pointer;
 
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-form-button:hover,
 .modal-form-button:focus {
     background-color: #404bbf;
+}
+
+.modal-form-field:has(.modal-form-comment) {
+    margin-bottom: 16px;
 }
